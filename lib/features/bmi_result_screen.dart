@@ -1,13 +1,67 @@
 import 'package:bmi/core/app_const.dart';
 import 'package:bmi/shared/custom_text_button.dart';
-import 'package:bmi/features/bmi_form_screen.dart';
 import 'package:flutter/material.dart';
 
 class BmiResultScreen extends StatelessWidget {
-  const BmiResultScreen({super.key});
+  final double height;
+  final double weight;
+  final String name;
+  final DateTime birthDate;
+  final String gender;
+  const BmiResultScreen({
+    super.key,
+    required this.height,
+    required this.weight,
+    required this.name,
+    required this.birthDate,
+    required this.gender,
+  });
+  int calculateAge(DateTime birthDate) {
+    final DateTime today = DateTime.now();
+    int age = today.year - birthDate.year;
+    if (today.month < birthDate.month ||
+        (today.month == birthDate.month && today.day < birthDate.day)) {
+      age--;
+    }
+    return age;
+  }
+
+  double bmiCalculation(double height, double weight) {
+    final heightMeter = height / 100;
+    return weight / (heightMeter * heightMeter);
+  }
+
+  String getBmiStatus(double bmi) {
+    if (bmi < 18.5) {
+      return 'Under Weight';
+    } else if (bmi < 25) {
+      return 'Normal';
+    } else if (bmi < 30) {
+      return 'Over Weight';
+    } else {
+      return 'Obese';
+    }
+  }
+
+  String getBmiDescription(double bmi) {
+    if (bmi < 18.5) {
+      return 'Your BMI is less than 18.5';
+    } else if (bmi < 25) {
+      return 'Your BMI is between 18.5 and 24.9';
+    } else if (bmi < 30) {
+      return 'Your BMI is between 25 and 29.9';
+    } else {
+      return 'Your BMI is 30 or more';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
+    final int age = calculateAge(birthDate);
+    final double bmiCalc = bmiCalculation(height, weight);
+    final String bmiStatus = getBmiStatus(bmiCalc);
+    final String bmiDescription = getBmiDescription(bmiCalc);
+
     return Scaffold(
       body: Center(
         child: Column(
@@ -29,7 +83,7 @@ class BmiResultScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Samy Call',
+                            name,
                             style: TextStyle(
                               fontSize: 22,
                               fontWeight: FontWeight.bold,
@@ -37,15 +91,16 @@ class BmiResultScreen extends StatelessWidget {
                             ),
                           ),
                           SizedBox(height: 10),
+
                           Text(
-                            'A 23 years old male.',
+                            'A $age years old $gender.',
                             style: TextStyle(fontSize: 15, color: Colors.white),
                           ),
 
                           Padding(
                             padding: const EdgeInsets.only(left: 40, top: 20),
                             child: Text(
-                              '16.5',
+                              bmiCalc.toStringAsFixed(1),
                               style: TextStyle(
                                 fontSize: 35,
                                 fontWeight: FontWeight.bold,
@@ -72,7 +127,7 @@ class BmiResultScreen extends StatelessWidget {
                               Column(
                                 children: [
                                   Text(
-                                    '180 cm',
+                                    '$height cm',
                                     style: TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.bold,
@@ -99,7 +154,7 @@ class BmiResultScreen extends StatelessWidget {
                               Column(
                                 children: [
                                   Text(
-                                    '70 kg',
+                                    '$weight kg',
                                     style: TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.bold,
@@ -120,7 +175,7 @@ class BmiResultScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(width: 65),
+                    SizedBox(width: 50),
                     Column(
                       children: [
                         Padding(
@@ -147,7 +202,7 @@ class BmiResultScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Under Weight',
+                      bmiStatus,
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
@@ -157,7 +212,7 @@ class BmiResultScreen extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(top: 7),
                       child: Text(
-                        'Your BMI is less than 18.5',
+                        bmiDescription,
                         style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.w400,

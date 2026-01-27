@@ -1,4 +1,3 @@
-import 'package:bmi/features/bmi_result_screen.dart';
 import 'package:bmi/features/bmi_form_screen.dart';
 import 'package:bmi/features/on_boarding_screen.dart';
 import 'package:flutter/material.dart';
@@ -15,9 +14,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       initialRoute: '/',
       routes: {
-        '/':(context)=> const OnBoardingScreen(),
+        '/': (context) => const OnBoardingScreen(),
         '/home': (context) => const HomeScreen(),
-        '/result': (context) => const BmiResultScreen(),
       },
     );
   }

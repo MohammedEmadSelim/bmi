@@ -1,6 +1,5 @@
 import 'package:bmi/core/app_const.dart';
 import 'package:bmi/shared/custom_text_button.dart';
-import 'package:bmi/features/bmi_form_screen.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingScreen extends StatelessWidget {
@@ -9,13 +8,13 @@ class OnBoardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: Stack(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 163, left: 27),
-            child: Image.asset('assets/images/first_img.png'),
-          ),
-          Expanded(
+          Positioned(
+            top: 500,
+            left: 0,
+            right: 0,
+            bottom: 0,
             child: Container(
               width: double.infinity,
               decoration: BoxDecoration(
@@ -28,33 +27,32 @@ class OnBoardingScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 45, left: 15),
+                  const SizedBox(height: 45),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 15),
                     child: Text(
-                      'Know Your Body Better ,\nGet Your BMI Score in Less \nThan a Minute!',
+                      'Know Your Body Better ,\n'
+                      'Get Your BMI Score in Less \n'
+                      'Than a Minute!',
                       style: TextStyle(fontSize: 24, color: Colors.white),
                     ),
                   ),
-                  SizedBox(height: 44),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 15),
+                  const SizedBox(height: 44),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 15),
                     child: Text(
                       'It takes just 30 seconds – and your health is\n worth it!',
                       style: TextStyle(color: Colors.white, fontSize: 16),
                     ),
                   ),
-                  SizedBox(height: 43),
+                  const SizedBox(height: 43),
                   Center(
                     child: SizedBox(
                       width: 330,
-                      child: Divider(
-                        height: 0,
-                        thickness: 2,
-                        color: Colors.white,
-                      ),
+                      child: Divider(thickness: 2, color: Colors.white),
                     ),
                   ),
-                  SizedBox(height: 24),
+                  const SizedBox(height: 24),
                   CustomTextButton(
                     text: 'Get Started',
                     onPressed: () {
@@ -63,6 +61,17 @@ class OnBoardingScreen extends StatelessWidget {
                   ),
                 ],
               ),
+            ),
+          ),
+          Positioned(
+            top: 170,
+            left: 0,
+            right: 0,
+            child: Image.asset(
+              'assets/images/first_img.png',
+              fit: BoxFit.contain,
+              width: 330,
+              height: 360,
             ),
           ),
         ],
