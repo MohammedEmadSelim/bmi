@@ -1,3 +1,5 @@
+<img width="243" height="529" alt="Screenshot 2026-01-29 at 1 07 26 AM" src="https://github.com/user-attachments/assets/c5be6c39-aecb-47b6-aa59-8b6551f4cb8d" />
+
 # bmi
 
 A new Flutter project.
