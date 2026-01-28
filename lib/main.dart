@@ -1,4 +1,4 @@
-import 'package:bmi/onboard.dart';
+import 'package:bmi/onboarding.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: onboarding(),
+        home: Onboarding(),
     );
   }
 }
