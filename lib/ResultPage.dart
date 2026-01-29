@@ -7,17 +7,17 @@ class BmiResultPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFEFF2F8),
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(16),
+          padding: EdgeInsets.all(16),
           child: Column(
             children: [
               Container(
                 width: double.infinity,
-                padding: const EdgeInsets.all(20),
+                padding: EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  color: const Color(0xFF7B78D1),
+                  color: AppColors.primary,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Row(
@@ -26,13 +26,13 @@ class BmiResultPage extends StatelessWidget {
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
+                        children:  [
                           Text(
                             'Samy Call',
                             style: TextStyle(
                               fontSize: 22,
                               fontWeight: FontWeight.w700,
-                              color: Colors.white,
+                              color: AppColors.white,
                             ),
                           ),
                           SizedBox(height: 4),
@@ -41,7 +41,7 @@ class BmiResultPage extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 15,
                               fontWeight: FontWeight.w400,
-                              color: Colors.white,
+                              color: AppColors.white,
                             ),
                           ),
                           SizedBox(height: 24),
@@ -50,7 +50,7 @@ class BmiResultPage extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 35,
                               fontWeight: FontWeight.w700,
-                              color: Colors.white,
+                              color: AppColors.white,
                             ),
                           ),
                           SizedBox(height: 4),
@@ -59,7 +59,7 @@ class BmiResultPage extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.w500,
-                              color: Colors.white,
+                              color: AppColors.white,
                             ),
                           ),
                           SizedBox(height: 50),
@@ -73,7 +73,7 @@ class BmiResultPage extends StatelessWidget {
                                     style: TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.w700,
-                                      color: Colors.white,
+                                      color: AppColors.white,
                                     ),
                                   ),
                                   SizedBox(height: 2),
@@ -82,7 +82,7 @@ class BmiResultPage extends StatelessWidget {
                                     style: TextStyle(
                                       fontSize: 15,
                                       fontWeight: FontWeight.w500,
-                                      color: Colors.white,
+                                      color: AppColors.white,
                                     ),
                                   ),
                                 ],
@@ -97,7 +97,7 @@ class BmiResultPage extends StatelessWidget {
                                     style: TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.w700,
-                                      color: Colors.white,
+                                      color: AppColors.white,
                                     ),
                                   ),
                                   SizedBox(height: 2),
@@ -106,7 +106,7 @@ class BmiResultPage extends StatelessWidget {
                                     style: TextStyle(
                                       fontSize: 15,
                                       fontWeight: FontWeight.w500,
-                                      color: Colors.white,
+                                      color: AppColors.white,
                                     ),
                                   ),
                                 ],
@@ -131,7 +131,7 @@ class BmiResultPage extends StatelessWidget {
                 width: double.infinity,
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  color: const Color(0xFF0B5D3B),
+                  color: AppColors.green,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Column(
@@ -142,7 +142,7 @@ class BmiResultPage extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.w700,
-                        color: Colors.white,
+                        color: AppColors.white,
                       ),
                     ),
                     SizedBox(height: 3),
@@ -151,7 +151,7 @@ class BmiResultPage extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w500,
-                        color: Colors.white,
+                        color: AppColors.white,
                       ),
                     ),
                     SizedBox(height: 20),
@@ -164,13 +164,13 @@ class BmiResultPage extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w400,
-                        color: Colors.white,
+                        color: AppColors.white,
                       ),
                     ),
                   ],
                 ),
               ),
-              const SizedBox(height: 220),
+              const SizedBox(height: 160),
               SizedBox(
                 width: double.infinity,
                 height: 50,
@@ -179,18 +179,18 @@ class BmiResultPage extends StatelessWidget {
                     Navigator.pop(context);
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF4A4A87),
+                    backgroundColor: AppColors.darkPurple,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
                     elevation: 0,
                   ),
-                  child: const Text(
+                  child: Text(
                     'Calculate BMI Again',
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w600,
-                      color: Colors.white,
+                      color: AppColors.white,
                     ),
                   ),
                 ),

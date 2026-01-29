@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // home: OnBoarding(),
-      // home: BmiResultPage(),
+      home: BmiResultPage(),
     );
   }
 }
@@ -67,7 +67,7 @@ class OnBoarding extends StatelessWidget {
                   ),
 
                   Divider(
-                    color: Colors.grey,
+                    color: AppColors.greyWhite,
                   ),
 
                   const SizedBox(height: 20),
@@ -87,7 +87,7 @@ class OnBoarding extends StatelessWidget {
                       child: const Text(
                         "Get Start",
                         style: TextStyle(
-                          color: Colors.white,
+                          color: AppColors.white,
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
                         ),
