@@ -43,17 +43,15 @@ class OnBoarding extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          // 🔼 Illustration
           Expanded(
             child: Center(
-              child: Image.asset('assets/images/first_img.png',
+              child: Image.asset('assets/images/Illustration.png',
                 width: MediaQuery.of(context).size.width * 0.85,
                 fit: BoxFit.contain,
               ),
             ),
           ),
 
-          // 🔽 Bottom Card
           ClipRRect(
             borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(32),
