@@ -85,7 +85,56 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           Image.asset("assets/images/firstPhoto.png",width: 334,height:329 ),
           Container(
-            child:Padding(padding: EdgeInsetsGeometry.all(20)),
+            decoration: BoxDecoration(
+              color: Color(0xff7876CD),
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child:Padding(padding: EdgeInsetsGeometry.all(20),
+              child: Column(
+                children: [
+                  Text("Know Your Body Better  Get Your BMI Score in Less Than a Minute",
+                    style: TextStyle(color: Colors.white,
+                    fontWeight: FontWeight.w700,
+                      fontSize:20 ,
+                    ),
+
+
+
+                  ),
+                  SizedBox(height: 24),
+                  Text("It takes just 30 seconds – and your health is worth it!",
+                    style: TextStyle(color: Colors.white,
+                        fontSize: 16,
+                      fontWeight:FontWeight.w400 ,
+                    ),
+
+                  ),
+                  Divider(),
+                  SizedBox(height: 20),
+                  SizedBox(height: 300,
+                    width: 45,
+                    child:  ElevatedButton(onPressed: (){},
+                        child: Text("Get Start",style: TextStyle(color: Colors.white,
+                            fontSize:18 ,
+                          fontWeight: FontWeight.w600,
+                        ),),
+                      style:  ElevatedButton.styleFrom(shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                            
+                      ),backgroundColor: Color(0xff484783)),
+                      
+                      
+                    ),
+                  )
+
+
+
+                ],
+              ),
+                
+            ),
+            
+            
 
 
           )
