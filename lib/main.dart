@@ -1,4 +1,3 @@
-import 'package:bmi/onboarding.dart';
 import 'package:flutter/material.dart';
 import 'package:bmi/final_screen.dart';
 
