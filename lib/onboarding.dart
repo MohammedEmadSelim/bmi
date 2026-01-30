@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:bmi/final_screen.dart';
 class Onboarding extends StatelessWidget {
   const Onboarding({super.key});
 
@@ -35,12 +36,17 @@ class Onboarding extends StatelessWidget {
                     Text("It takes just 30 seconds – and your health is worth it!" , style: TextStyle(color: Colors.white),),
                      SizedBox(height: 20,),
                     Divider(),
-                    ElevatedButton(onPressed: (){},
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.deepPurple
-                        ,foregroundColor: Colors.white
-                        )
-                        ,child:Text("Get Started"))
+                    SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>FinalScreen()));
+                      },
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.white
+                          ,foregroundColor: Colors.deepPurple
+                          )
+                          ,child:Text("Get Started")),
+                    )
                   ],
                 ),
               ),

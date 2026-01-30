@@ -1,3 +1,4 @@
+import 'package:bmi/onboarding.dart';
 import 'package:flutter/material.dart';
 
 class FinalScreen extends StatelessWidget {
@@ -130,7 +131,7 @@ class FinalScreen extends StatelessWidget {
             SizedBox( height: 25,),
             SizedBox(
               width: double.infinity ,
-              child: ElevatedButton(onPressed: (){}, style:ElevatedButton.styleFrom(
+              child: ElevatedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>Onboarding())) ;}, style:ElevatedButton.styleFrom(
                   backgroundColor: Colors.deepPurpleAccent,
                   padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                   shape: RoundedRectangleBorder(
