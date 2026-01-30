@@ -27,33 +27,26 @@ class BmiResultPage extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children:  [
-                          Text(
-                            'Samy Call',
-                            style: TextStyle(
+                          Text('Samy Call',style: TextStyle(
                               fontSize: 22,
                               fontWeight: FontWeight.w700,
                               color: AppColors.white,
                             ),
                           ),
                           SizedBox(height: 4),
-                          Text(
-                            'A 23 years old male.',
-                            style: TextStyle(
+                          Text('A 23 years old male.', style: TextStyle(
                               fontSize: 15,
                               fontWeight: FontWeight.w400,
                               color: AppColors.white,
                             ),
                           ),
                           SizedBox(height: 24),
-                          Text(
-                            '16.5',
-                            style: TextStyle(
+                          Text('16.5',style: TextStyle(
                               fontSize: 35,
                               fontWeight: FontWeight.w700,
                               color: AppColors.white,
                             ),
                           ),
-                          SizedBox(height: 4),
                           Text(
                             'BMI Calc',
                             style: TextStyle(
@@ -62,7 +55,7 @@ class BmiResultPage extends StatelessWidget {
                               color: AppColors.white,
                             ),
                           ),
-                          SizedBox(height: 50),
+                          SizedBox(height: 30),
                           Row(
                             children: [
                               Column(
@@ -76,7 +69,6 @@ class BmiResultPage extends StatelessWidget {
                                       color: AppColors.white,
                                     ),
                                   ),
-                                  SizedBox(height: 2),
                                   Text(
                                     'Height',
                                     style: TextStyle(
@@ -88,6 +80,13 @@ class BmiResultPage extends StatelessWidget {
                                 ],
                               ),
                               SizedBox(width: 20),
+                              SizedBox(
+                                height: 50,
+                                child: VerticalDivider(
+                                  color: Colors.white,
+                                  thickness: 1,
+                                ),
+                              ),
                               SizedBox(width: 20),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -118,62 +117,53 @@ class BmiResultPage extends StatelessWidget {
                     ),
                     SizedBox(
                       height: 280,
-                      child: Image.asset(
-                        'assets/images/body.png',
-                        fit: BoxFit.contain,
-                      ),
+                      child: Image.asset('assets/images/body.png',),
                     ),
                   ],
                 ),
               ),
-              const SizedBox(height: 30),
+              SizedBox(height: 30),
               Container(
                 width: double.infinity,
-                padding: const EdgeInsets.all(20),
+                padding: const EdgeInsets.symmetric(vertical:50,horizontal: 15),
                 decoration: BoxDecoration(
                   color: AppColors.green,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Text(
-                      'Under Weight',
-                      style: TextStyle(
+                  children: [
+                    Text('Under Weight',style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.w700,
                         color: AppColors.white,
                       ),
                     ),
-                    SizedBox(height: 3),
-                    Text(
-                      'Your BMI is less than 18.5',
-                      style: TextStyle(
+                    Text('Your BMI is less than 18.5', style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w500,
                         color: AppColors.white,
                       ),
                     ),
-                    SizedBox(height: 20),
-                    Text(
-                      'Lorem ipsum dolor sit amet consectetur. '
-                          'Sagittis interdum dui enim imperdiet sapien cursus velit pharetra. '
-                          'Viverra justo tempor dictum odio. '
-                          'Nisl non dui integer orci nulla eget laoreet tellus. '
-                          'Orci nunc a orci convallis ac orci.',
-                      style: TextStyle(
+                    SizedBox(height: 10),
+                    Text('Lorem ipsum dolor sit amet consectetur. '
+                         'Sagittis interdum dui enim imperdiet sapien cursus velit pharetra. '
+                         'Viverra justo tempor dictum odio. '
+                         'Nisl non dui integer orci nulla eget laoreet tellus. '
+                         'Orci nunc a orci convallis ac orci.',style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w400,
                         color: AppColors.white,
                       ),
                     ),
+                    SizedBox(height: 10),
                   ],
                 ),
               ),
-              const SizedBox(height: 160),
+              SizedBox(height: 100),
               SizedBox(
-                width: double.infinity,
-                height: 50,
+                width: 332,
+                height: 45,
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.pop(context);
@@ -185,9 +175,7 @@ class BmiResultPage extends StatelessWidget {
                     ),
                     elevation: 0,
                   ),
-                  child: Text(
-                    'Calculate BMI Again',
-                    style: TextStyle(
+                  child: Text('Calculate BMI Again',style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w600,
                       color: AppColors.white,
@@ -201,4 +189,5 @@ class BmiResultPage extends StatelessWidget {
       ),
     );
   }
+
 }

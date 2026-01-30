@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: OnBoarding(),
-      // home: BmiResultPage(),
+      // home: OnBoarding(),
+      home: BmiResultPage(),
     );
   }
 }
