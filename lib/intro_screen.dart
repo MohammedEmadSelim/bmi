@@ -1,3 +1,4 @@
+import 'package:bmi/calc_screen.dart';
 import 'package:flutter/material.dart';
 
 class IntroScreen extends StatelessWidget {
@@ -61,7 +62,9 @@ class IntroScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, CalcScreen.routeName);
+                        },
                         child: Text(
                           "Get Start",
                           style: TextStyle(
