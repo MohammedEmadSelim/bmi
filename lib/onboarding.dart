@@ -2,6 +2,8 @@ import 'package:bmi/info.dart';
 import 'package:bmi/theme/color.dart';
 import 'package:flutter/material.dart';
 
+import 'calculate.dart';
+
 class Onboarding extends StatelessWidget {
   const Onboarding({super.key});
 
@@ -67,7 +69,7 @@ class Onboarding extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => ResultScreen()),
+                                builder: (context) => Calculate()),
                           );
                         },
                         style: ElevatedButton.styleFrom(
