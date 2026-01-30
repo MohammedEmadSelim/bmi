@@ -111,7 +111,6 @@ class _CalculateState extends State<Calculate> {
                   SizedBox(height: 10,),
                   _inputField(),
                   SizedBox(height: 10,),
-
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
