@@ -1,3 +1,4 @@
+import 'package:bmi/result_screen.dart';
 import 'package:flutter/material.dart';
 
 class CalcScreen extends StatelessWidget {
@@ -99,6 +100,7 @@ class CalcScreen extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
+                  Navigator.pushNamed(context, ResultScreen.routeName);
                 },
                 child: Text(
                   "Calculate BMI",

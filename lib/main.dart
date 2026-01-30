@@ -1,5 +1,6 @@
 import 'package:bmi/calc_screen.dart';
 import 'package:bmi/intro_screen.dart';
+import 'package:bmi/result_screen.dart';
 import 'package:flutter/material.dart';
 
 void main(){
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       routes: {
         IntroScreen.routeName : (_)=>IntroScreen(),
         CalcScreen.routeName : (_)=>CalcScreen(),
+        ResultScreen.routeName : (_)=>ResultScreen(),
       },
     );
   }
