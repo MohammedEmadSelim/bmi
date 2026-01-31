@@ -1,4 +1,3 @@
-import 'package:bmi/onboarding.dart';
 import 'package:flutter/material.dart';
 import 'package:bmi/widgets/result_first_card.dart';
 import 'package:bmi/widgets/second_card.dart';
