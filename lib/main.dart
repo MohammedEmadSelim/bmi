@@ -1,7 +1,7 @@
 import 'package:bmi/core/theme/colors.dart';
 import 'package:flutter/material.dart';
 
-import 'view/onboarding_screen.dart';
+import 'view/screens/onboarding_screen.dart';
 
 void main() {
   runApp(const MyApp());

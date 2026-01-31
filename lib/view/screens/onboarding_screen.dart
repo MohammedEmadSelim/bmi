@@ -1,6 +1,7 @@
 
 
 import 'package:bmi/core/theme/colors.dart';
+import 'package:bmi/view/screens/calculation_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'result_screen.dart';
@@ -54,7 +55,7 @@ class OnBoarding extends StatelessWidget {
 
 
                         Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => ResultScreen(),));
+                          builder: (context) => CalculationScreen(),));
                       },
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
