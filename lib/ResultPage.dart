@@ -42,7 +42,7 @@ class BmiResultPage extends StatelessWidget {
                           ),
                           SizedBox(height: 24),
                           Text('16.5',style: TextStyle(
-                              fontSize: 35,
+                            fontSize: 35,
                               fontWeight: FontWeight.w700,
                               color: AppColors.white,
                             ),
@@ -122,10 +122,11 @@ class BmiResultPage extends StatelessWidget {
                   ],
                 ),
               ),
+
               SizedBox(height: 30),
               Container(
                 width: double.infinity,
-                padding: const EdgeInsets.symmetric(vertical:50,horizontal: 15),
+                padding: const EdgeInsets.symmetric(vertical:40,horizontal: 10),
                 decoration: BoxDecoration(
                   color: AppColors.green,
                   borderRadius: BorderRadius.circular(20),
@@ -146,11 +147,7 @@ class BmiResultPage extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 10),
-                    Text('Lorem ipsum dolor sit amet consectetur. '
-                         'Sagittis interdum dui enim imperdiet sapien cursus velit pharetra. '
-                         'Viverra justo tempor dictum odio. '
-                         'Nisl non dui integer orci nulla eget laoreet tellus. '
-                         'Orci nunc a orci convallis ac orci.',style: TextStyle(
+                    Text("Lorem ipsum dolor sit amet consectetur. Sagittis interdum dui enim imperdiet sapien cursus velit pharetra. Viverra justo tempor dictum odio. Nisl non dui integer orci nulla eget laoreet tellus. Orci nunc a orci convallis ac orci. Urna auctor at elementum sit ante maecenas ullamcorper rhoncus dictum. Morbi venenatis lectus ultrices euismod. Laoreet purus risus amet enim sagittis ut. Consectetur libero orci urnager dignissi est.",style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w400,
                         color: AppColors.white,
@@ -160,7 +157,7 @@ class BmiResultPage extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 100),
+              SizedBox(height: 40),
               SizedBox(
                 width: 332,
                 height: 45,

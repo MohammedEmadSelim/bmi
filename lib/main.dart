@@ -1,5 +1,6 @@
 import 'package:bmi/ResultPage.dart';
 import 'package:flutter/material.dart';
+import 'Calculate_BMI.dart';
 import 'core/theme/colors.dart';
 
 void main() {
@@ -13,8 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // home: OnBoarding(),
-      home: BmiResultPage(),
+      home: OnBoarding(),
     );
   }
 }
@@ -35,7 +35,7 @@ class OnBoarding extends StatelessWidget {
           ),
 
           ClipRRect(
-            borderRadius: const BorderRadius.only(
+            borderRadius: BorderRadius.only(
               topLeft: Radius.circular(32),
               topRight: Radius.circular(32),
             ),
@@ -76,7 +76,12 @@ class OnBoarding extends StatelessWidget {
                     width: double.infinity,
                     height: 48,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const BmiScreen()),
+                        );
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppColors.darkPurple,
                         shape: RoundedRectangleBorder(
