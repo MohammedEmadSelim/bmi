@@ -1,8 +1,13 @@
 import 'package:bmi/core/theme/colors.dart';
+import 'package:bmi/models/bmi_model.dart';
 import 'package:flutter/material.dart';
 
 class ResultScreen extends StatelessWidget {
-  const ResultScreen({super.key});
+  const ResultScreen({super.key, required this.bmiModel, required this.name, required this.birth});
+  final BmiModel bmiModel;
+  final String name;
+  final String birth;
+
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +35,7 @@ class ResultScreen extends StatelessWidget {
                             Column(
                               children: [
                                 Text(
-                                  "Samy Call",
+                                 name,
                                   style: TextStyle(
                                     color: AppColors.white,
         
@@ -41,7 +46,7 @@ class ResultScreen extends StatelessWidget {
                                 ),
                                 SizedBox(height: 10),
                                 Text(
-                                  "A 23 years old male.",
+                                  birth,
                                   style: TextStyle(
                                     color: AppColors.white,
                                     fontSize: 15,
@@ -59,7 +64,7 @@ class ResultScreen extends StatelessWidget {
                             Column(
                               children: [
                                 Text(
-                                  "36.2",
+                                 bmiModel.bmiData.bmi.toStringAsFixed(3),
                                   style: TextStyle(
                                     color: AppColors.white,
         
@@ -70,7 +75,7 @@ class ResultScreen extends StatelessWidget {
                                 ),
                                 SizedBox(height: 6),
                                 Text(
-                                  "A 23 years old male.",
+                                  bmiModel.bmiData.risk,
                                   style: TextStyle(
                                     color: AppColors.white,
                                     fontSize: 18,
@@ -88,7 +93,7 @@ class ResultScreen extends StatelessWidget {
                             Column(
                               children: [
                                 Text(
-                                  "180 CM",
+                                  bmiModel.bmiData.height,
                                   style: TextStyle(
                                     color: AppColors.white,
         
@@ -118,7 +123,7 @@ class ResultScreen extends StatelessWidget {
                             Column(
                               children: [
                                 Text(
-                                  "70 Kg",
+                                  bmiModel.bmiData.weight,
                                   style: TextStyle(
                                     color: AppColors.white,
         
@@ -159,7 +164,7 @@ class ResultScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Under Weight",
+                      bmiModel.bmiData.risk,
                       style: TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 22,
@@ -168,7 +173,9 @@ class ResultScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 4),
                     Text(
-                      "Under Weight",
+                      bmiModel.bmiData.summary,
+                      overflow: TextOverflow.ellipsis,
+
                       style: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 15,
@@ -178,7 +185,8 @@ class ResultScreen extends StatelessWidget {
                     SizedBox(height: 4),
         
                     Text(
-                      "Lorem ipsum dolor sit amet consectetur. Sagittis interdum dui enim imperdiet sapien cursus velit pharetra. Viverra justo tempor dictum odio. Nisl non dui integer orci nulla eget laoreet tellus. Orci nunc a orci convallis ac orci. Urna auctor at elementum sit ante maecenas ullamcorper rhoncus dictum. Morbi venenatis lectus ultrices euismod. Laoreet purus risus amet enim sagittis ut. Consectetur libero orci urnager dignissi est.",
+                      bmiModel.bmiData.recommendation,
+                      // overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 15,
@@ -197,9 +205,7 @@ class ResultScreen extends StatelessWidget {
                   onPressed: () {
                     /// navigate to mew screen
         
-                    Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => ResultScreen()),
-                    );
+
                   },
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
@@ -223,3 +229,18 @@ class ResultScreen extends StatelessWidget {
     );
   }
 }
+
+
+// ui
+
+
+// api
+
+/*
+* dio (get.post,.....)
+* return Map
+* convert map to object (serialzation , deserialzation)
+*
+* fill data in result
+*
+* */
