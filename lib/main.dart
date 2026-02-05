@@ -1,4 +1,4 @@
-import 'package:bmi/onboardingscrreen.dart';
+import 'package:bmi/view/screens/onboardingscrreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: ' BMI',
       initialRoute: '/',
       routes: {

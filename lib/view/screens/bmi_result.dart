@@ -1,8 +1,10 @@
-import 'package:bmi/bmi_form.dart';
+import 'package:bmi/models/bmi_model.dart';
+import 'package:bmi/view/screens/bmi_form.dart';
 import 'package:bmi/core/app_color.dart';
 import 'package:flutter/material.dart';
 class BmiResult extends StatelessWidget {
-  const BmiResult({super.key});
+  final BmiModel bmi;
+   const BmiResult({super.key,required this.bmi});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +32,7 @@ class BmiResult extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('Samy Call',
+                            Text('mohamed',
                               style: TextStyle(
                                   fontSize: 22,
                               fontWeight: FontWeight.w700,
@@ -49,7 +51,7 @@ class BmiResult extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Text('16.5',
+                          Text('${bmi.bmi.toStringAsFixed(1)}',
                             style: TextStyle(
                                 fontSize: 35,
                                 fontWeight: FontWeight.w700,
@@ -71,7 +73,7 @@ class BmiResult extends StatelessWidget {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                Text('180 cm',
+                                Text(bmi.height,
                                   style: TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.w700,
@@ -98,7 +100,7 @@ class BmiResult extends StatelessWidget {
                           Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Text('70 Kg',
+                              Text(bmi.weight,
                                 style: TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.w700,
@@ -141,7 +143,7 @@ class BmiResult extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(left: 20,bottom: 7),
-                    child: Text('Under Weight',
+                    child: Text(bmi.risk,
                     style: TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.w700,
@@ -151,7 +153,7 @@ class BmiResult extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 20,bottom: 7),
-                    child: Text('Your BMI is less than 18.5',
+                    child: Text(bmi.summary,
                       style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w400,
@@ -160,7 +162,7 @@ class BmiResult extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(right: 17,left: 20,bottom: 17),
-                    child: Text('Lorem ipsum dolor sit amet consectetur. Sagittis interdum dui enim imperdiet sapien cursus velit pharetra. Viverra justo tempor dictum odio. Nisl non dui integer orci nulla eget laoreet tellus. Orci nunc a orci convallis ac orci. Urna auctor at elementum sit ante maecenas ullamcorper rhoncus dictum. Morbi venenatis lectus ultrices euismod. Laoreet purus risus amet enim sagittis ut. Consectetur libero orci urnager dignissi est.',
+                    child: Text(bmi.recommendation,
                       style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w400,
