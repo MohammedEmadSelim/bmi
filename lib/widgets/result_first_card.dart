@@ -1,7 +1,24 @@
 import 'package:flutter/material.dart';
 
 class ResultFirstCard extends StatelessWidget {
-  const ResultFirstCard({super.key});
+
+  final String name;
+  final String age;
+  final String gender;
+  final String bmiScore;
+  final String height;
+  final String weight;
+
+  const ResultFirstCard({
+  super.key,
+  required this.name,
+  required this.age,
+  required this.gender,
+  required this.bmiScore,
+  required this.height,
+  required this.weight,
+  });
+  
 
   @override
   Widget build(BuildContext context) {
@@ -18,13 +35,13 @@ class ResultFirstCard extends StatelessWidget {
           children: [
             Column(
               children: [
-                Text("Samy Call", style: TextStyle(
+                Text(name, style: TextStyle(
 
                     fontSize: 24 ,
                     color: Colors.white
                 ),),
                 SizedBox(height: 5,),
-                Text("A 23 year old male.",style: TextStyle(fontSize: 12 , color: Colors.white)
+                Text("A $age year old male.",style: TextStyle(fontSize: 12 , color: Colors.white)
                   ,
                 ),
                 SizedBox(height: 15,),
@@ -32,7 +49,7 @@ class ResultFirstCard extends StatelessWidget {
                   children: [
                     Column(
                       children: [
-                        Text("16.5" , style: TextStyle(fontSize: 28 , fontWeight: FontWeight.bold , color: Colors.white),)
+                        Text("$bmiScore" , style: TextStyle(fontSize: 28 , fontWeight: FontWeight.bold , color: Colors.white),)
                         ,                            Text("BMI Calc" , style: TextStyle(fontSize: 16 ,  color: Colors.white),),
                         SizedBox(height: 10,)
                         ,
@@ -41,7 +58,7 @@ class ResultFirstCard extends StatelessWidget {
                             children: [
                               Column(
                                 children: [
-                                  Text("180 CM",style: TextStyle(color: Colors.white , fontSize: 16),),
+                                  Text("$height CM",style: TextStyle(color: Colors.white , fontSize: 16),),
                                   Text("Height",style: TextStyle(fontSize: 10 , color: Colors.white , ),)
                                 ],
                               ) ,
@@ -56,7 +73,7 @@ class ResultFirstCard extends StatelessWidget {
 
                               Column(
                                 children: [
-                                  Text("70 kg",style: TextStyle(color: Colors.white , fontSize: 16),),
+                                  Text("$weight kg",style: TextStyle(color: Colors.white , fontSize: 16),),
                                   Text("Weight",style: TextStyle(fontSize: 10 , color: Colors.white , ),)
                                 ],
                               ) ,

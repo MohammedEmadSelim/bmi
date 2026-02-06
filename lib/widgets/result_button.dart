@@ -1,20 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:bmi/onboarding.dart';
 
 class ResultButton extends StatelessWidget {
-  const ResultButton({super.key});
+  final VoidCallback onPressed;
+  final String btnText;
+
+  const ResultButton({
+    super.key,
+    required this.onPressed,
+    required this.btnText,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return             SizedBox(
-      width: double.infinity ,
-      child: ElevatedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>Onboarding())) ;}, style:ElevatedButton.styleFrom(
-        backgroundColor: Colors.deepPurpleAccent,
-        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
-        ),),child: Text("Calculate BMI Again" ,style: TextStyle(color: Colors.white),),),
-    )
-    ;
+    return SizedBox(
+      width: double.infinity,
+      height: 55,
+      child: ElevatedButton(
+        onPressed: onPressed,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.deepPurpleAccent,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+        ),
+        child: Text(
+          btnText,
+          style: const TextStyle(fontSize: 18, color: Colors.white),
+        ),
+      ),
+    );
   }
 }

@@ -31,7 +31,7 @@ class OnboardingCard extends StatelessWidget {
               height: 50,
               width: double.infinity,
               child: ElevatedButton(onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>FinalScreen()));
+                // Navigator.push(context, MaterialPageRoute(builder: (context)=> FinalScreen()));
               },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white
