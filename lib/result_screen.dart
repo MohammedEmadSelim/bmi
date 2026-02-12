@@ -1,13 +1,32 @@
 import 'package:bmi/app_color.dart';
+import 'package:bmi/calculation_model.dart';
+import 'package:bmi/data_screen.dart';
 import 'package:flutter/material.dart';
 
 class ResultScreen extends StatelessWidget {
-  const ResultScreen({super.key});
+  final BmiData bmiData;
+  final String name;
+  final int age;
+  final String gender;
+
+  const ResultScreen({
+    super.key,
+    required this.bmiData,
+    required this.name,
+    required this.age,
+    required this.gender,
+  });
+
+  Color _getRiskColor() {
+    if (bmiData.bmi < 18.5) return Colors.orange;
+    if (bmiData.bmi < 25) return AppColor.green;
+    if (bmiData.bmi < 30) return Colors.orange;
+    return Colors.red;
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12.0),
@@ -23,139 +42,127 @@ class ResultScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Column(
-                      children: [
-                        Column(
-                          children: [
-                            Text(
-                              "Samy Call",
-                              style: TextStyle(
-                                color: AppColor.white,
-                                
-                                fontSize: 22,
-                                
-                                fontWeight: FontWeight.w700,
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            name,
+                            style: TextStyle(
+                              color: AppColor.white,
+                              fontSize: 22,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            'A $age years old $gender.',
+                            style: TextStyle(
+                              color: AppColor.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                          Row(
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    bmiData.bmi.toStringAsFixed(1),
+                                    style: TextStyle(
+                                      color: AppColor.white,
+                                      fontSize: 35,
+                                      fontWeight: FontWeight.w700,
+                                    ),
+                                  ),
+                                  SizedBox(height: 6),
+                                  Text(
+                                    bmiData.risk,
+                                    style: TextStyle(
+                                      color: AppColor.white,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ],
                               ),
-                            ),
-                            SizedBox(height: 10),
-                            Text(
-                              "A 23 years old male.",
-                              style: TextStyle(
-                                color: AppColor.white,
-                                fontSize: 15,
-                                
-                                fontWeight: FontWeight.w400,
+                            ],
+                          ),
+                          SizedBox(height: 10),
+                          Row(
+                            children: [
+                              Column(
+                                children: [
+                                  Text(
+                                    bmiData.height,
+                                    style: TextStyle(
+                                      color: AppColor.white,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w700,
+                                    ),
+                                  ),
+                                  SizedBox(height: 6),
+                                  Text(
+                                    'Height',
+                                    style: TextStyle(
+                                      color: AppColor.white,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ],
                               ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 10),
-                        Row(
-                          children: [
-                            Column(
-                              children: [
-                                Text(
-                                  "36.2",
-                                  style: TextStyle(
-                                    color: AppColor.white,
-        
-                                    fontSize: 35,
-        
-                                    fontWeight: FontWeight.w700,
+                              SizedBox(width: 12),
+                              SizedBox(
+                                height: 55,
+                                child: VerticalDivider(color: AppColor.white),
+                              ),
+                              SizedBox(width: 12),
+                              Column(
+                                children: [
+                                  Text(
+                                    bmiData.weight,
+                                    style: TextStyle(
+                                      color: AppColor.white,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w700,
+                                    ),
                                   ),
-                                ),
-                                SizedBox(height: 6),
-                                Text(
-                                  "A 23 years old male.",
-                                  style: TextStyle(
-                                    color: AppColor.white,
-                                    fontSize: 18,
-        
-                                    fontWeight: FontWeight.w500,
+                                  SizedBox(height: 6),
+                                  Text(
+                                    'Weight',
+                                    style: TextStyle(
+                                      color: AppColor.white,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w500,
+                                    ),
                                   ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 10),
-                        Row(
-                          children: [
-                            Column(
-                              children: [
-                                Text(
-                                  "180 CM",
-                                  style: TextStyle(
-                                    color: AppColor.white,
-        
-                                    fontSize: 20,
-        
-                                    fontWeight: FontWeight.w700,
-                                  ),
-                                ),
-                                SizedBox(height: 6),
-                                Text(
-                                  "Height",
-                                  style: TextStyle(
-                                    color: AppColor.white,
-                                    fontSize: 18,
-        
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(width: 12),
-                            SizedBox(
-                              height: 55,
-                              child: VerticalDivider(color: AppColor.white),
-                            ),
-                            SizedBox(width: 12),
-                            Column(
-                              children: [
-                                Text(
-                                  "70 Kg",
-                                  style: TextStyle(
-                                    color: AppColor.white,
-        
-                                    fontSize: 20,
-        
-                                    fontWeight: FontWeight.w700,
-                                  ),
-                                ),
-                                SizedBox(height: 6),
-                                Text(
-                                  "weight",
-                                  style: TextStyle(
-                                    color: AppColor.white,
-                                    fontSize: 18,
-        
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ],
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                     Image.asset('Assets/Images/Vector.png'),
                   ],
                 ),
               ),
               SizedBox(height: 24),
-        
               Container(
-                padding: EdgeInsets.symmetric(vertical: 35,horizontal: 16),
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(vertical: 35, horizontal: 16),
                 decoration: BoxDecoration(
-                  color: AppColor.green,
+                  color: _getRiskColor(),
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Under Weight",
+                      bmiData.summary,
                       style: TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 22,
@@ -164,7 +171,7 @@ class ResultScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 4),
                     Text(
-                      "Under Weight",
+                      bmiData.risk,
                       style: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 15,
@@ -172,9 +179,8 @@ class ResultScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 4),
-        
                     Text(
-                      "Lorem ipsum dolor sit amet consectetur. Sagittis interdum dui enim imperdiet sapien cursus velit pharetra. Viverra justo tempor dictum odio. Nisl non dui integer orci nulla eget laoreet tellus. Orci nunc a orci convallis ac orci. Urna auctor at elementum sit ante maecenas ullamcorper rhoncus dictum. Morbi venenatis lectus ultrices euismod. Laoreet purus risus amet enim sagittis ut. Consectetur libero orci urnager dignissi est.",
+                      bmiData.recommendation,
                       style: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 15,
@@ -184,30 +190,25 @@ class ResultScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 24,),
-        
+              SizedBox(height: 24),
               SizedBox(
                 width: 300,
                 height: 45,
                 child: ElevatedButton(
                   onPressed: () {
-                    /// navigate to mew screen
-        
-                    Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => ResultScreen()),
+                    Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute(builder: (context) => DataScreen()),
+                      (route) => route.isFirst,
                     );
                   },
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(
-                        16,
-                      ), // Adjust the radius here
+                      borderRadius: BorderRadius.circular(16),
                     ),
-        
                     backgroundColor: AppColor.darkPurple,
                   ),
                   child: Text(
-                    "Calculate BMI Again",
+                    'Calculate BMI Again',
                     style: TextStyle(color: Colors.white),
                   ),
                 ),

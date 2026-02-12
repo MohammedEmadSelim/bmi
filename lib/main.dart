@@ -1,4 +1,4 @@
-import 'package:bmi/result_screen.dart';
+import 'package:bmi/on_boarding.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: ResultScreen(),
+      home: OnBoarding(),
     );
   }
 }

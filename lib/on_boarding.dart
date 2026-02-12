@@ -1,4 +1,5 @@
 import 'package:bmi/app_color.dart';
+import 'package:bmi/data_screen.dart';
 import 'package:flutter/material.dart';
 
 class OnBoarding extends StatelessWidget {
@@ -47,7 +48,13 @@ class OnBoarding extends StatelessWidget {
                             borderRadius: BorderRadiusGeometry.circular(8),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const DataScreen(),
+                            ),
+                          );
+                        },
                         child: Text(
                           "Get Start",
                           style: TextStyle(
