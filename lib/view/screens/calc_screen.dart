@@ -13,9 +13,6 @@ class CalcScreen extends StatefulWidget {
 }
 
 class _CalcScreenState extends State<CalcScreen> {
-  GestureTapCallback? get onIncreamentTap => null;
-
-  GestureTapCallback? get onDecrementTap => null;
   final TextEditingController nameController = TextEditingController();
   final TextEditingController birthController = TextEditingController();
   final TextEditingController heightController = TextEditingController();
@@ -168,11 +165,11 @@ class _CalcScreenState extends State<CalcScreen> {
 
               decoration: InputDecoration(
                 suffixIcon: GestureDetector(
-                  onTap: onIncreamentHeight,
+                  onTap: () => onIncreamentHeight(),
                   child: Icon(Icons.add, size: 20),
                 ),
                 prefixIcon: GestureDetector(
-                  onTap: onDecreamentHeight,
+                  onTap: () => onDecreamentHeight(),
                   child: Icon(Icons.remove, size: 20),
                 ),
                 fillColor: ColorsUsed.lightcolor,
@@ -193,11 +190,11 @@ class _CalcScreenState extends State<CalcScreen> {
               controller: weightController,
               decoration: InputDecoration(
                 suffixIcon: GestureDetector(
-                  onTap: onIncreamentWeight,
+                  onTap: () => onIncreamentWeight(),
                   child: Icon(Icons.add, size: 20),
                 ),
                 prefixIcon: GestureDetector(
-                  onTap: onDecreamentWeight,
+                  onTap: () => onDecreamentWeight(),
                   child: Icon(Icons.remove, size: 20),
                 ),
                 fillColor: ColorsUsed.lightcolor,
@@ -220,7 +217,10 @@ class _CalcScreenState extends State<CalcScreen> {
                       weightController.text,
                       heightController.text,
                     );
+
                     var data = BmiModel.fromJson(res);
+                    print(data);
+
                     // ignore: use_build_context_synchronously
                     Navigator.of(context).push(
                       MaterialPageRoute(
