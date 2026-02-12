@@ -1,5 +1,6 @@
-import 'package:bmi/core/theme/color.dart';
 import 'package:bmi/core/theme/colors.dart';
+import 'package:bmi/view/screens/calc_screen.dart';
+
 import 'package:flutter/material.dart';
 
 class Onboarding extends StatelessWidget {
@@ -7,10 +8,12 @@ class Onboarding extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: SingleChildScrollView(
+      appBar: AppBar(),
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Image.asset("assets/images/first_img.png"),
@@ -47,9 +50,16 @@ class Onboarding extends StatelessWidget {
                       Divider(),
                       SizedBox(height: 30),
                       SizedBox(
+                        width: 300,
+                        height: 45,
                         child: ElevatedButton(
                           onPressed: () {
-                            // Navigator.push(context, MaterialPageRoute(builder:(context)=> ))
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => CalcScreen(),
+                              ),
+                            );
                           },
 
                           style: ElevatedButton.styleFrom(
