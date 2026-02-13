@@ -41,7 +41,7 @@ class FinalScreen extends StatelessWidget {
                 weight: weight.toString(),
               ),
               const SizedBox(height: 25),
-              const SecondCard(),
+              SecondCard(status: status),
               const Spacer(),
               ResultButton(
                 btnText: "Calculate BMI Again",
