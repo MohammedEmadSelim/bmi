@@ -60,6 +60,7 @@ class InputScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(30),
               ),
               child: Row(
+
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Expanded(
