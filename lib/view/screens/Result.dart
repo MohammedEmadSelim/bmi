@@ -2,7 +2,6 @@ import 'package:bmi/core/theme/colors.dart';
 import 'package:bmi/view/screens/calc_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:bmi/models/bmi_model.dart';
-import 'package:bmi/view_model/repo.dart';
 
 class Result extends StatelessWidget {
   final String name;

@@ -2,7 +2,6 @@ import 'package:bmi/core/theme/colors.dart';
 import 'package:bmi/view/screens/Result.dart';
 import 'package:bmi/view/widget/gender_card.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:bmi/models/bmi_model.dart';
 import 'package:bmi/view_model/repo.dart';
 
@@ -106,6 +105,7 @@ class _CalcScreenState extends State<CalcScreen> {
               readOnly: true,
               onTap: () async {
                 var date = await showDatePicker(
+                  helpText: "Birth Date",
                   context: context,
                   firstDate: DateTime(1900),
                   lastDate: DateTime.now(),
@@ -114,6 +114,7 @@ class _CalcScreenState extends State<CalcScreen> {
                   birthController.text = date.toString();
                 }
               },
+
               decoration: InputDecoration(
                 fillColor: ColorsUsed.lightcolor,
                 filled: true,
@@ -214,8 +215,8 @@ class _CalcScreenState extends State<CalcScreen> {
                 child: ElevatedButton(
                   onPressed: () async {
                     Map<String, dynamic> res = await repo.calcBmi(
-                      weightController.text,
-                      heightController.text,
+                      weight: double.tryParse(weightController.text) ?? 0,
+                      height: double.tryParse(heightController.text) ?? 0,
                     );
 
                     var data = BmiModel.fromJson(res);
