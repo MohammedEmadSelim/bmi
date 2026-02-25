@@ -1,0 +1,45 @@
+import 'package:flutter/material.dart';
+import '../screens/app_colors.dart';
+
+class GenderSelector extends StatelessWidget {
+  const GenderSelector({
+    super.key,
+    required this.image,
+    required this.title,
+    required this.selected,
+  });
+
+  final String image;
+  final String title;
+  final bool selected;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(2),
+      decoration: BoxDecoration(
+        border: BoxBorder.fromBorderSide(
+          selected ? BorderSide(color: AppColors.green) : BorderSide.none,
+        ),
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Column(
+        children: [
+          Container(
+            padding: EdgeInsets.only(top: 10, right: 10, left: 10),
+            decoration: BoxDecoration(
+              color: AppColors.lightPurple,
+              borderRadius: BorderRadius.circular(16),
+            ),
+            child: Image.asset(image),
+          ),
+          SizedBox(height: 4),
+          Text(
+            title,
+            style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
+          ),
+        ],
+      ),
+    );
+  }
+}
