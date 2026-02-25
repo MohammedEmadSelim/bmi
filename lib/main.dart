@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 
@@ -11,6 +12,13 @@ import 'intro_screen.dart';
 
 void main(){
   runApp(MyApp());
+=======
+import 'package:flutter/material.dart';
+import 'screens/welcome_screen.dart';
+
+void main() {
+  runApp(const MyApp());
+>>>>>>> 16257a0 (Finish BMI Task)
 }
 
 class MyApp extends StatelessWidget {
@@ -20,6 +28,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+<<<<<<< HEAD
       initialRoute: IntroScreen.routeName,
       routes: {
         IntroScreen.routeName : (_)=>IntroScreen(),
@@ -29,3 +38,9 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+=======
+      home: WelcomeScreen(),
+    );
+  }
+}
+>>>>>>> 16257a0 (Finish BMI Task)
