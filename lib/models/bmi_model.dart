@@ -20,9 +20,9 @@ class BmiModel {
         height: data['height'],
         weight: data['weight'],
         bmi: data['bmi'],
-        risk: data['risk'],
-        summary: data['summary'],
-        recommendation: data['recommendation']
+        risk: data['risk']??"No risk",
+        summary: data['summary']??"No risk",
+        recommendation: data['recommendation']??"Keep Going"
     );
   }
 }

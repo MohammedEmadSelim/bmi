@@ -11,6 +11,7 @@ class IncTextFieldDec extends StatelessWidget {
     required this.hintText,
     required this.onIncrement,
     required this.onDecrement,
+    this.validator,
   });
 
   final String title;
@@ -19,6 +20,7 @@ class IncTextFieldDec extends StatelessWidget {
   final String hintText;
   final VoidCallback onIncrement;
   final VoidCallback onDecrement;
+  final String? Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
@@ -34,9 +36,10 @@ class IncTextFieldDec extends StatelessWidget {
           ),
           SizedBox(height: 10,),
           TextFormField(
+            keyboardType: TextInputType.number,
             controller: controller,
             readOnly: readonly,
-            inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+            inputFormatters: [FilteringTextInputFormatter.digitsOnly,LengthLimitingTextInputFormatter(3)],
             decoration: InputDecoration(
               hintText: hintText,
               filled: true,

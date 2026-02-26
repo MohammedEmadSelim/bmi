@@ -2,6 +2,8 @@ import 'package:bmi/view/screens/bmi_form.dart';
 import 'package:bmi/core/app_color.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/containe_textbutton.dart';
+
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
 
@@ -62,32 +64,13 @@ class OnBoardingScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(bottom: 42,top: 10),
                   child: Center(
-                    child: Container(
-                      width: 332,
-                      height: 45,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: AppColor.purple1,
-                      ),
-
-                      child: TextButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => BmiForm()),
-                          );
-                        },
-                        child: Text(
-                          'Get Start',
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
-                            letterSpacing: 1.5,
-                            color: AppColor.white0,
-                          ),
-                        ),
-                      ),
-                    ),
+                    child: ContaineTextbutton(
+                      text: "Get Start",
+                      onPressed: (){
+                        Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context)=>BmiForm())
+                        );
+                      },),
                   ),
                 ),
               ],
