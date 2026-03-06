@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "391200121145",
+    "project_id": "abdo-4d06f",
+    "storage_bucket": "abdo-4d06f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:391200121145:android:1fa83287cda918911708e8",
+        "android_client_info": {
+          "package_name": "com.nti.bmi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBY2_2GWJ7fBEJWLWeXRAAPJq7BJh6AlkM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
