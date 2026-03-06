@@ -1,20 +1,27 @@
-//import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'Screens/tasks_screen.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'logic/bmi_cubit.dart';
+import 'screens/onboarding_screen.dart';
 
-void main(){
-  runApp(AbdoApp());
+void main() {
+  runApp(const BmiApp());
 }
 
-class AbdoApp extends StatelessWidget{
+class BmiApp extends StatelessWidget {
+  const BmiApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    //throw UnimplementedError();
-    return MaterialApp(
-      home: TasksScreen(),
+    return BlocProvider(
+      create: (context) => BmiCubit(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          useMaterial3: true,
+          scaffoldBackgroundColor: Colors.white,
+        ),
+        home: OnboardingScreen(),
+      ),
     );
-
   }
-
 }
